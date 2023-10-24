@@ -9,4 +9,7 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 
 project(app LANGUAGES C)
 
+# Add HTTP Client and JSON Handler source files
+target_sources(app PRIVATE http_client/http_client.c json_handler/json_handler.c)
+
 target_sources(app PRIVATE src/main.c)
